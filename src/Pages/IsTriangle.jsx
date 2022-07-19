@@ -40,39 +40,42 @@ function IsTriangle() {
     setisSubmit(true);
   };
   return (
-    <div>
+    <div className="isTriangle-container">
       <Heading heading="Is Triangle?" />
-      <Input
-        inputLabel="Angle1(in degree)"
-        inputid="Angle1"
-        handleInput={handleInput1}
-        value={angle1}
-      />
-      <Input
-        inputLabel="Angle2(in degree)"
-        inputid="Angle2"
-        handleInput={handleInput2}
-        value={angle2}
-      />
-      <Input
-        inputLabel="Angle3(in degree)"
-        inputid="Angle3"
-        handleInput={handleInput3}
-        value={angle3}
-      />
-      <Button handleButton={handleButton} />
+      <div id="input-btn-container">
+        <Input
+          inputLabel="Angle1(in degree)"
+          inputid="Angle1"
+          handleInput={handleInput1}
+          value={angle1}
+        />
+        <Input
+          inputLabel="Angle2(in degree)"
+          inputid="Angle2"
+          handleInput={handleInput2}
+          value={angle2}
+        />
+        <Input
+          inputLabel="Angle3(in degree)"
+          inputid="Angle3"
+          handleInput={handleInput3}
+          value={angle3}
+        />
+        <Button handleButton={handleButton} />
+      </div>
+
       {isSubmit ? (
-        <div>
+        <div id="msg">
           {isInputFilled ? (
             <div>
               {istriangleValid ? (
-                <div>Triangle valid</div>
+                <p>Triangle valid</p>
               ) : (
                 <div>Triangle invalid</div>
               )}
             </div>
           ) : (
-            <div>Filled all inputs</div>
+            <p> 😕😕 Hey!! Buddy Filled all input 😕😕</p>
           )}{" "}
         </div>
       ) : (

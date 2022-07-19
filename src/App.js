@@ -5,6 +5,7 @@ import IsTriangle from "./Pages/IsTriangle";
 import Quiz from "./Pages/Quiz";
 import Hypotenuse from "./Pages/Hypotenuse";
 import Area from "./Pages/Area";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/hypotenuse" element={<Hypotenuse />} />
           <Route path="/area" element={<Area />} />
         </Routes>
+        {/* <Footer /> */}
       </Router>
     </>
   );
