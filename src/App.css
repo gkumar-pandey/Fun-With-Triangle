@@ -15,6 +15,14 @@ body {
   background-color: var(--nav-color);
   padding: 1.2rem;
 }
+.link {
+  /* border: 1px solid red; */
+  color: white;
+  text-decoration: none;
+  padding: 0 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
 
 .isTriangle-container {
   display: flex;
@@ -92,16 +100,20 @@ body {
   #msg {
     width: 100%;
   }
-  .que-container{
+  .que-container {
     width: 100%;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  #heading{
+  .link {
+    padding: 0 5px;
+  }
+
+  #heading {
     width: 100%;
   }
-  #formula{
+  #formula {
     width: 100%;
   }
   #input-btn-container {

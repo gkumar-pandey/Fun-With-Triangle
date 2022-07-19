@@ -8,31 +8,38 @@ function Area() {
   const [base, setbase] = useState("");
   const [isInputFilled, setisInputFilled] = useState("");
   const [isSubmit, setisSubmit] = useState(false);
-
+  let area;
   const [height, setheight] = useState("");
-
-  const handleBaseInput = () => {};
-  const handleHeightInput = () => {};
-  const isTriangleValid = () => {
-    // if () {
-    //   setisInputFilled(false);
-    // } else {
-    //   setisInputFilled(true);
-    //   if () {
-    //     setistriangleValid(true);
-    //   } else {
-    //     setistriangleValid(false);
-    //   }
-    // }
+  const isInputsAreFilled = () => {
+    if (base == "" || height == "") {
+      setisInputFilled(false);
+    } else {
+      setisInputFilled(true);
+    }
   };
+  const handleBaseInput = (e) => {
+    setbase(e);
+  };
+  const handleHeightInput = (e) => {
+    setheight(e);
+  };
+  const areaOfTriangle = (base, height) => {
+    console.log("height", height);
+    console.log("base ", base);
+    area = (base * height) / 2;
+    console.log(area);
+  };
+
   const handleButton = () => {
     setisSubmit(true);
+    isInputsAreFilled();
+    areaOfTriangle(base, height);
   };
 
   return (
     <div className="isTriangle-container">
       <Heading heading="Area Of Triangle" />
-      <Formula formula={'Area of Triangle = 1/2 *(Base * Height)'}/>
+      <Formula formula={"Area of Triangle = 1/2 *(Base * Height)"} />
       <div id="input-btn-container">
         <Input
           inputLabel={"Base(in cm)"}
@@ -49,21 +56,15 @@ function Area() {
         <Button btnName="Check Area" handleButton={handleButton} />
       </div>
       {isSubmit ? (
-        {
-          /* <div id="msg">
+        <div id="msg">
           {isInputFilled ? (
             <div>
-              {istriangleValid ? (
-                <p>Triangle valid</p>
-              ) : (
-                <div>Triangle invalid</div>
-              )}
+              <p>Area of Triangle  </p>
             </div>
           ) : (
             <p> 😕😕 Hey!! Buddy Filled all input 😕😕</p>
           )}{" "}
-        </div> */
-        }
+        </div>
       ) : (
         <div></div>
       )}

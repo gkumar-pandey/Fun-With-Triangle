@@ -1,22 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
- 
 
 function Navbar() {
   return (
     <>
       <nav className="nav-bar">
         <ul>
-          <Link to={"/"} style={style.link}>
+          <Link to={"/"} className="link">
             Is Triangle?
           </Link>
-          <Link to={"/quiz"} style={style.link}>
+          <Link to={"/quiz"} className="link">
             Quiz
           </Link>
-          <Link to={"/hypotenuse"} style={style.link}>
+          <Link to={"/hypotenuse"} className="link">
             Hypotenuse
           </Link>
-          <Link to={"/area"} style={style.link}>
+          <Link to={"/area"} className="link">
             Area
           </Link>
         </ul>
@@ -25,13 +24,5 @@ function Navbar() {
   );
 }
 
-const style = {
-  link: {
-    color: "white",
-    textDecoration: "none",
-    padding: '0 1rem',
-    fontSize: '1.4rem',
-    fontWeight: 'bold'
-  },
-};
+ 
 export default Navbar;
