@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../Components/Button";
+import Formula from "../Components/Formula";
 import Heading from "../Components/Heading";
 import Input from "../Components/Input";
 
@@ -8,13 +9,11 @@ function Area() {
   const [isInputFilled, setisInputFilled] = useState("");
   const [isSubmit, setisSubmit] = useState(false);
 
-
   const [height, setheight] = useState("");
 
   const handleBaseInput = () => {};
   const handleHeightInput = () => {};
   const isTriangleValid = () => {
-    
     // if () {
     //   setisInputFilled(false);
     // } else {
@@ -27,13 +26,13 @@ function Area() {
     // }
   };
   const handleButton = () => {
-    
     setisSubmit(true);
   };
 
   return (
     <div className="isTriangle-container">
       <Heading heading="Area Of Triangle" />
+      <Formula formula={'Area of Triangle = 1/2 *(Base * Height)'}/>
       <div id="input-btn-container">
         <Input
           inputLabel={"Base(in cm)"}
@@ -47,10 +46,11 @@ function Area() {
           handleInput={handleHeightInput}
           value={height}
         />
-        <Button btnName='Check Area' handleButton={handleButton} />
+        <Button btnName="Check Area" handleButton={handleButton} />
       </div>
       {isSubmit ? (
-        {/* <div id="msg">
+        {
+          /* <div id="msg">
           {isInputFilled ? (
             <div>
               {istriangleValid ? (
@@ -62,7 +62,8 @@ function Area() {
           ) : (
             <p> 😕😕 Hey!! Buddy Filled all input 😕😕</p>
           )}{" "}
-        </div> */}
+        </div> */
+        }
       ) : (
         <div></div>
       )}
