@@ -61,7 +61,7 @@ function IsTriangle() {
           handleInput={handleInput3}
           value={angle3}
         />
-        <Button handleButton={handleButton} />
+        <Button handleButton={handleButton} btnName='Is Triangle' />
       </div>
 
       {isSubmit ? (
