@@ -7,13 +7,33 @@ import Formula from "../Components/Formula";
 function Hypotenuse() {
   const [sideA, setsideA] = useState("");
   const [sideB, setsideB] = useState("");
+  const [isInputFilled, setisInputFilled] = useState("");
+
   const [isSubmit, setisSubmit] = useState(false);
+  const [hypotenuseOfTrianlge, sethypotenuseOfTriangle] = useState("");
 
-  const handleInputSideA = () => {};
+  const handleInputSideA = (e) => {
+    setsideA(e);
+  };
 
-  const handleInputSideB = () => {};
+  const handleInputSideB = (e) => {
+    setsideB(e);
+  };
+  const findHypotenuseofTriangle = (a, b) => {
+    let hypotenuse = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+    sethypotenuseOfTriangle(hypotenuse);
+  };
+  const isInputAreaFilled = () => {
+    if (sideA == "" || sideB == "") {
+      setisInputFilled(false);
+    } else {
+      setisInputFilled(true);
+    }
+  };
   const handleButton = () => {
     setisSubmit(true);
+    isInputAreaFilled();
+    findHypotenuseofTriangle(sideA, sideB)
   };
   return (
     <div className="isTriangle-container">
@@ -34,6 +54,20 @@ function Hypotenuse() {
         />
         <Button btnName="Check Hypotenuse" handleButton={handleButton} />
       </div>
+      {isSubmit ? (
+        <div id="msg">
+          {isInputFilled ? (
+            <div>
+              <p>Hypotenuse of Triangle {hypotenuseOfTrianlge} </p>
+            </div>
+          ) : (
+            <p> 😕😕 Hey!! Buddy Filled all input 😕😕</p>
+          )}
+          {""}
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }
